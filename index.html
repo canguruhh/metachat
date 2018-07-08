@@ -1,0 +1,22 @@
+<html ng-app="app">
+
+<head>
+    <script src="node_modules//angular/angular.min.js"></script>
+    <script src="node_modules/autobahn-js-built/autobahn.min.js"></script>
+    <script src="node_modules/angular-wamp/release/angular-wamp.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-controller="MyCtrl">
+        <p ng-repeat="m in messages track by $index">{{m}}</p>
+        <div>
+            <form>
+                <input ng-model="text">
+                <button ng-click="send(text)">send</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

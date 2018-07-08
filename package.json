@@ -1,0 +1,16 @@
+{
+  "name": "chat",
+  "version": "0.1.0",
+  "description": "Cool chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "angular-wamp": "^0.3.4",
+    "autobahn-js-built": "^0.11.1"
+  }
+}
