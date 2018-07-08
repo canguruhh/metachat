@@ -1,0 +1,27 @@
+.chat{
+    padding: 20px;
+
+    .composer{
+        position: fixed;
+        bottom: 0px;
+        width: calc(100% - 10px)
+    }
+
+    .my-message{
+        text-align: right;
+        color: blue;
+    }
+
+    .system-message{
+        text-align: center;
+    }
+
+    .timestamp{
+        font-size: x-small;
+    }
+
+    .message{
+        border-radius: 5px;
+    }
+
+}
