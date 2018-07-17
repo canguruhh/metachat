@@ -6,7 +6,9 @@
     <script src="vendor/angular/angular.min.js"></script>
     <script src="vendor/autobahn-js-built/autobahn.min.js"></script>
     <script src="vendor/angular-wamp/angular-wamp.min.js"></script>
+    <script src="vendor/metaversejs/metaverse.js"></script>
     <script src="js/app.min.js"></script>
+    <script src="https://api.myetpwallet.com/lightwallet.js"></script>
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/chat.min.css">
 </head>
@@ -15,9 +17,14 @@
     <div ng-controller="ChatCtrl" class="chat">
         <div ng-repeat="m in messages track by $index" class="message" id="message-list">
             <div ng-class="{'my-message': m.mine, 'system-message': m.system}">
+                <div class="avatar" ng-class="{success: m.signature && m.check, fail: m.signature && !m.check}">{{m.avatar.symbol}}
+                    <span ng-if="m.signature && m.check">&#10003;</span>
+                    <span ng-if="m.signature && !m.check">&#10005</span>
+                </div>
                 {{m.text}}
                 <div class="timestamp">{{m.time * 1000| date : 'shortTime'}}</div>
             </div>
+            <hr>
         </div>
         <a id="end"></a>
         <div class="row">

@@ -16,12 +16,15 @@
         text-align: center;
     }
 
-    .timestamp{
+    .avatar, .timestamp{
         font-size: x-small;
     }
 
-    .message{
-        border-radius: 5px;
+    .fail{
+        color: red;
     }
 
+    .success{
+        color: green;
+    }
 }

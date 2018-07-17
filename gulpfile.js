@@ -35,6 +35,13 @@ gulp.task('assets', function() {
         .pipe(gulp.dest('./dist/icons'))
 });
 
+gulp.task('config', function(){
+    gulp.src([
+        './config.json',
+    ])
+        .pipe(gulp.dest('./dist/'))
+})
+
 gulp.task('vendor', function() {
 
     // Bootstrap
@@ -58,6 +65,10 @@ gulp.task('vendor', function() {
             './node_modules/angular/angular.min.js'
         ])
         .pipe(gulp.dest('./dist/vendor/angular'))
+    gulp.src([
+        './node_modules/metaversejs/dist/*'
+    ])
+        .pipe(gulp.dest('./dist/vendor/metaversejs'))
     gulp.src([
         './node_modules/jquery/dist/jquery.min.js'
     ])
@@ -108,7 +119,7 @@ gulp.task('js:minify', function() {
 gulp.task('js', ['js:minify']);
 
 // Default task
-gulp.task('default', ['css', 'lang', 'js', 'vendor', 'html', 'assets']);
+gulp.task('default', ['css', 'lang', 'js', 'vendor', 'html', 'assets', 'config']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
